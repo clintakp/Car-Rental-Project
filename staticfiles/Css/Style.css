@@ -1,0 +1,1507 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+main{
+    flex: 1;
+}
+
+/* Header styling */
+header {
+    background: #fefbfb;
+    color: #0f0f0f;
+    padding: 0.5rem 1rem; /* Adjusted padding for better responsiveness */
+    display: flex;
+    align-items: center; /* Changed from flex-start for better vertical alignment */
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Header Logo space from the left side of the section */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2em;
+}
+
+/* Header Logo image size */
+.logo img {
+    max-width: 100%; /* Ensures responsiveness */
+    height: 6em; /* Maintain aspect ratio */
+}
+
+/* Settings for the informations on the right side of the header section */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0;
+}
+
+/* User reg styling */
+.user-registration {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.user-reg {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.user-reg li {
+    margin: 5px; /* Adjusted for better spacing */
+    padding: 3px 10px;
+}
+
+.user-reg li a {
+    text-decoration: none;
+    border-radius: 4rem;
+    background-color: #ccc;
+    padding: 0.1rem 1rem; /* Adjusted padding */
+    color: #1e201d;
+    font-size: 0.8rem; /* Adjusted font size */
+    display: block;
+}
+
+.user-reg li a:hover {
+    text-decoration: underline;
+    color: #e74c3c;
+}
+
+/* Navigation Links styling */
+.nav-links {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-links li {
+    margin: 5px; /* Adjusted for better spacing */
+    padding: 3px 10px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #323131;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+    color: #e74c3c;
+}
+
+/* Homebooking Hero section styling */
+.homebooking-hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../Images/aston-martin-hire-nz-rental-header-2589.jpg') no-repeat center center; /* Center image */
+    background-size: cover;
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Adjust welcome note margins */
+.WelcomeNote {
+    margin-top: 1px;
+    margin-bottom: 6em;
+    text-align: center;
+}
+
+.WelcomeNote h4 {
+    display: inline-flex;
+    font-weight: 50em;
+    margin-bottom: 0;
+}
+
+.animated-text {
+    font-family: 'Lobster', cursive;
+    opacity: 0;
+    transform: scale(0.1);
+    animation: popUpExpand 1.5s ease-out forwards;
+}
+
+/* Keyframe for fading in and sliding up */
+@keyframes popUpExpand {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.rainbow-letter {
+    font-family: Arial black;
+    font-size: 5rem;
+    margin: 0 7px;
+    text-shadow: 2px 2px 4px rgb(34, 34, 34);
+    letter-spacing: 20px;
+}
+
+/* Rainbow letters colors */
+.rainbow-letter:nth-child(1) { color: white; }
+.rainbow-letter:nth-child(2) { color: white; }
+.rainbow-letter:nth-child(3) { color: white; }
+.rainbow-letter:nth-child(4) { color: white; }
+.rainbow-letter:nth-child(5) { color: white; }
+.rainbow-letter:nth-child(6) { color: white; }
+.rainbow-letter:nth-child(7) { color: white; }
+
+.WelcomeNote h3, .WelcomeNote h2 {
+    margin: 0;
+    padding: 1px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.WelcomeNote h3 {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+}
+
+.WelcomeNote h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.homebooking-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.homebooking-hero-content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(68, 25, 25, 0.8);
+    letter-spacing: 5px;
+}
+
+.homebooking-form-container {
+    background: transparent;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+    align-items: center; /* Center contents */
+}
+
+/* Adjust form grid for smaller screens */
+.homebooking-form-container form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Stack items vertically by default */
+    gap: 3em;
+}
+
+.homebooking-form-group:nth-child(5) {
+    grid-column: 2 / span 2;
+}
+
+.homebooking-form-group {
+    display: inline-block;
+    flex-direction: column;
+}
+
+.homebooking-form-container form label {
+    color: white;
+    margin-top: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 30px;
+    text-shadow: 4px 4px 8px rgba(69, 38, 38, 0.8);
+}
+
+.homebooking-form-container form input, 
+.homebooking-form-container form select, 
+.homebooking-form-container form textarea {
+    width: 100%; /* Change to 100% for full responsiveness */
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.homebooking-herobtn-primary {
+    grid-column: 1 / span 2; /* Center button in smaller screens */
+    padding: 10px 0;
+    font-size: 1.1rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.homebooking-herobtn-primary:hover {
+    background-color: #1e201d;
+    color: white;
+}
+
+/* Responsive design for hero button */
+@media (min-width: 600px) {
+    .homebooking-herobtn-primary {
+        grid-column: 2 / span 2; /* Button placement on larger screens */
+        margin-bottom: 5em;
+    }
+}
+
+
+/* About Us section styling */
+.about-section {
+    background-color: #d9d9d90f;
+    padding: 2rem 1rem; /* Added padding for spacing */
+}
+
+.about-section h1 {
+    font-size: 2em;
+    color: #e74c3c;
+}
+
+.about-section p, .about-section p1 {
+    text-indent: 2%;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    padding-bottom: 40px;
+}
+
+.about-section h2 {
+    font-size: 2em;
+}
+
+.about-section h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-indent: 1%;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Section styling */
+section {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.services-section {
+    background: #fff;
+    padding: 2rem 1rem; /* Added padding for spacing */
+}
+
+.services-section h1 {
+    color: #e74c3c;
+    font-size: 2rem;
+}
+
+.services-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Services section styling */
+.services-section h3 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.car img {
+    max-width: 100%;
+    height: 150px; /* Ensures responsive height */
+    margin-bottom: 0.5rem;
+    border-radius: 15px;
+}
+
+.car {
+    display: inline-block; /* Align items horizontally */
+    width: 30%; /* Adjust width for larger screens */
+    margin: 0 10px; /* Space between items */
+    vertical-align: top;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.car h4 {
+    font-size: small;
+    text-align: left;
+    color: #e74c3c;
+}
+
+.car h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.car p {
+    text-align: left;
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8%;
+}
+
+/* Hover effect for car boxes */
+.car:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(252, 245, 245, 0.1);
+    cursor: pointer;
+}
+
+.servicebook-btn, .viewfleetservice-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.servicebook-btn {
+    background-color: #f41313;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.servicebook-btn:hover {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+.viewfleetservice-btn {
+    background-color: transparent;
+    font-size: small;
+    border: 2px solid #d9534f;
+    color: #f41313;
+    margin-left: 30px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.viewfleetservice-btn:hover {
+    background-color: #171717;
+    color: #fff;
+    border-color: #c10d0d;
+}
+
+/* Feedback Section styling */
+.Feedback-Section {
+    background-color: #d4d0d000;
+    padding: 2rem 1rem; /* Added padding for spacing */
+}
+
+.Feedback-Section h1 {
+    color: #f41313;
+    font-size: 2em;
+}
+
+.Feedback-Section h2 {
+    font-size: 2em;
+}
+
+.Feedback-Section p {
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    margin-bottom: 3em;
+}
+
+.cl-feedback img {
+    background: transparent;
+    max-width: 100%; /* Ensures responsive width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+.cl-feedback {
+    display: inline-block; /* Align items horizontally */
+    width: 30%; /* Adjust width for larger screens */
+    margin: 0 6em; /* Space between items */
+    margin-bottom: 4rem;
+    text-align: center;
+    vertical-align: top;
+}
+
+.cl-feedback p {
+    text-align: left;
+}
+
+.cl-feedback h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cl-feedback:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.445);
+    cursor: pointer;
+}
+
+/* Contact Section styling*/
+
+/* Contact Section styling */
+.contact-section {
+    background-color: #fff;
+    padding: 2rem 1rem;
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: flex-start; /* Center the items */
+}
+
+.contact-image img {
+    background: transparent;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    width: 250px;
+}
+
+.contactimage-details {
+    text-align: center;
+    max-width: 400px;
+}
+
+.contactimage-details h1 {
+    color: #f41313;
+    font-size: 2em;
+}
+
+.contactimage-details h2 {
+    font-size: 2em;
+}
+
+.contactimage-details p, .contactimage-details a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.contactimage-details a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.contactimage-details a:hover {
+    text-decoration: underline;
+}
+
+.contactimage-details .contactsec-btn {
+    padding: 0.5rem 1rem;
+    background-color: #f41313;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contactimage-details .contactsec-btn:hover {
+    background-color: #c20c0c;
+    text-decoration: none;
+}
+
+/*Media Queries for Responsiveness */
+@media (min-width: 600px) {
+    .contact-section {
+        flex-direction: row;
+        align-items: center;
+    }
+    .contact-image {
+        width: 50%; /* Adjust width for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-section {
+        gap: 10rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .car {
+        width: 22%; /* Adjust to fit more cars in larger screens */
+    }
+    .cl-feedback {
+        width: 22%; /* Adjust to fit more feedback items */
+    }
+}
+
+/*Reservation section styling*/
+
+/*Reservation Header Section */
+.Reservation-header-section {
+    background-image: url('../Images/reservationpage.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgb(100, 62, 43);
+}
+
+.Reservation-header-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight:900;
+}
+
+.Reservation-header-content p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #b9fdff;
+}
+
+.reservation-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(89, 132, 4, 0.053);
+    width: 100%;
+    height: 500px;
+}
+
+.reservation-form-container {
+    margin: auto;
+    display: flex;
+}
+
+.reservation-form-container form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.reservation-form-group:nth-child(5){
+    grid-column: span 4;
+}
+
+.reservation-form-group {
+    display: inline-block;
+    flex-direction: column;
+}
+
+.reservation-form-container form label {
+    color: #131111;
+    margin-bottom: 5px;
+}
+
+.reservation-form-container form input,
+.reservation-form-container form select,
+.reservation-form-container form textarea {
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.reservationbtn-primary {
+    width: 100%;
+    padding: 10px;
+    grid-column: 2 / span 2;
+    font-size: small;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.reservationbtn-primary:hover {
+    background-color: #8b8686;
+    color: white;
+}
+
+.assistance-section {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.assistance-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.assistance-section .title {
+    margin-bottom: 50px;
+}
+
+.assistance-section h2 {
+    font-family: arial black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.assistance-section .content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.assistance-section .column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.assistance-section h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.assistance-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .assistance-section .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*About us styling*/
+
+.about-us-section {
+    padding: 40px;
+}
+
+.about-us-container, .mission-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-us-container .about-us-text, .mission-container .mission-text {
+    max-width: 50%;
+}
+
+.about-us-container .about-us-image, .mission-container .mission-image {
+    max-width: 45%;
+}
+
+.about-us-container .about-us-image img, .mission-container .mission-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.about-us-text h2, .mission-text h2 {
+    font-family: Arial black;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify;
+}
+
+.about-us-text p, .mission-text p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #d9534f;
+    color: #d9534f;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.aboutus-services-section {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.aboutus-services-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #8b8686;
+}
+
+.aboutus-service-item {
+    max-width: 25%;
+    text-align: center;
+}
+
+.aboutus-service-item img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.aboutus-service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.aboutus-service-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.aboutus-pricing-container {
+    background-color: #fefdfd;
+    display: flex;
+    padding: auto;
+}
+
+.aboutus-pricing-container h2 {
+    font-size: 2em;
+    font-family: Arial black;
+    text-transform: uppercase;
+    margin: 40px 0px 20px;
+    margin-left: 50px;
+    margin-right: 5em;
+    color: #333;
+    text-align: left;
+    display: flex;
+    width: 80em;
+}
+
+.aboutus-pricing-container p {
+    color: #555;
+    margin: 50px 0 20px;
+    margin-right: 4em;
+    text-align: justify;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.aboutus-fleet-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.aboutus-fleet-container img {
+    width: 30%;
+    height: auto;
+    margin: 0 10px;
+}
+
+.aboutus-cta-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutus-cta-container p {
+    font-size: 1em;
+    margin-top: 15px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aboutus-cta-container .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.aboutus-cta-container .btn:hover {
+    background-color: #c9302c;
+}
+
+/*Fleet section styling*/
+
+/*Fleet Header Section */
+.fleet-header-section {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.fleet-header-section h2, 
+.fleet-header-section p {
+    margin: 10px 0;
+    font-size: 1.6em;
+}
+
+@media (min-width: 768px) {
+    .fleet-header-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .fleet-header-section h2 {
+        text-align: left;
+        font-size: 2em;
+        width: 25em;
+    }
+    
+    .fleet-header-section p {
+        font-size: medium;
+        width: 40em;
+        text-align: justify;
+    }
+}
+
+/* Container styling to move the form to the right */
+.searchbuttonform {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .searchbuttonform {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+/* Styling for the input field */
+.searchbuttonform .form-control {
+    width: 100%;
+    padding: 10px 20px; 
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+    .searchbuttonform .form-control {
+        width: 250px;
+        margin-right: 10px;
+    }
+}
+
+/* Styling for the search button */
+.searchbuttonform .btn-outline-success {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.searchbuttonform .btn-outline-success:hover {
+    background-color: #5f6260; 
+}
+
+/* General styling for the fleet section */
+.fleet-section {
+    background-color: white;
+    padding: 20px;
+}
+
+/* Responsive vehicle container */
+.fleet-section-vehicle-container {
+    display: grid;
+    gap: 5em;
+    width: 100%;
+    margin-bottom: 5em;
+}
+
+@media (min-width: 768px) {
+    .fleet-section-vehicle-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/* Styling for each vehicle card */
+.vehicle {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    .vehicle {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* Vehicle image */
+.vehicle-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Vehicle details */
+.vehicle-details {
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .vehicle-details {
+        margin-left: 20px;
+        text-align: left;
+    }
+}
+
+.vehicle-class {
+    font-size: 14px;
+    color: #d9534f;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.vehicle-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.vehicle-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Book Now button */
+.book-btn {
+    background-color: #d9534f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Vehicle price section */
+.vehicle-price {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.vehicle-price h1 {
+    margin: 0;
+    font-size: small;
+    color: black;
+}
+
+.vehicle-price p {
+    margin: 0;
+    color: rgb(9, 9, 9);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 768px) {
+    .vehicle {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .vehicle-details {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .vehicle-price {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .vehicle-price h1,
+    .vehicle-price p {
+        text-align: center;
+    }
+
+    .vehicle-image img {
+        height: 150px;
+    }
+}
+
+/*My Booking styling*/
+
+/*Booking Header Section */
+.manage-booking-header-section {
+    background-image: url('../Images/managebookingpage.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.manange-booking-header-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.manage-booking-header-content p {
+    font-size: 1.25rem;
+}
+
+.manage-booking-container {
+    width: 100%;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+}
+
+.manage-booking-content {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 0px;
+    padding: 90px;
+    align-content: center;
+}
+
+.manage-booking-instruction {
+    background-color: #8b868612;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: medium;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.manage-booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.manage-booking-input {
+    width: 90%;
+    padding: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.manage-booking-input:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.manage-booking-button {
+    width: 20%;
+    padding: 10px;
+    background-color: #d32f2f;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 220px;
+    transition: background-color 0.3s;
+}
+
+.manage-booking-button:hover {
+    background-color: #b3afaf;
+}
+
+/*Contact-us styling*/
+
+/* Contact Us Header Section */
+.contact-header-section {
+    background-image: url('../Images/contactusspage.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-header-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-header-content p {
+    font-size: 1.25rem;
+}
+
+/* Contact Form Section */
+.contact-form-section { 
+    background-color: #fff; 
+    padding: 50px 0;
+}
+
+.contact-form-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    max-width: 1000px; 
+    margin: auto; 
+    padding: 20px;
+}
+
+.contact-form-container form { 
+    width: 100%;
+}
+
+
+.input-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+input, select, textarea {
+    width: 100%; /* Ensure all inputs, select, and textarea match the same width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 10em; /* Keep textarea height same */
+}
+
+.input-row select {
+    -webkit-appearance: none; /* Hide default dropdown icon */
+    -moz-appearance: none;
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="gray" d="M2 5 L0 0 h4 Z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+}
+
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.send-btn, .clear-btn {
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.send-btn {
+    background-color: rgb(240, 34, 34);
+    color: #fff;
+}
+
+.send-btn:hover {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.clear-btn {
+    background-color: transparent;
+    color: #c00;
+    border: 1px solid #c00;
+}
+
+.clear-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.contact-info {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; 
+    text-align: justify;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.icon-map::before,
+.icon-phone::before,
+.icon-email::before { 
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.icon-map::before {
+    background-image: url('../Images/map-x.svg');
+}
+
+.icon-phone::before {
+    background-image: url('../Images/phone-x-.svg');
+}
+
+.icon-email::before {
+    background-image: url('../Images/email-x-.svg');
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.sort-form {
+    position: absolute; 
+    right: 0;           
+    top: 20px;          
+    margin-right: 20px; 
+}
+
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative; /* Ensures it sticks to the bottom */
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px; /* Ensures a minimum height */
+}
+
+/* Logo section */
+.footer-logo {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.footer-logo img {
+    height: 80px;
+}
+
+.footer-logo p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    color: #fff;
+    width: 100%; /* Responsive width */
+    max-width: 25em;
+}
+
+/* Footer right section */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.footer-right p {
+    font-size: x-small;
+    margin-right: 0;
+    text-align: right;
+}
+
+/* Info section */
+.footer-infos {
+    margin-bottom: 20px;
+}
+
+/* Contact details */
+.footer-contact {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-contact li {
+    margin: 0 10px;
+    padding: 3px 10px;
+}
+
+.footer-contact li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 70%;
+    display: block;
+}
+
+.footer-contact li a:hover {
+    color: #e74c3c;
+}
+
+/* Navigation links */
+.footer-nav-links {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-nav-links li {
+    margin: 0 10px;
+    padding: 3px 10px;
+}
+
+.footer-nav-links a {
+    text-decoration: none;
+    color: #fcf9f9;
+    font-size: 70%;
+    display: block;
+}
+
+.footer-nav-links a:hover {
+    color: #e74c3c;
+}
+
+/* Social media section */
+.footer-socials {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-socials a {
+    text-decoration: none;
+    color: #fcf9f9;
+    font-size: 70%;
+    display: block;
+    margin: 0 10px;
+    padding: 3px 10px;
+}
+
+.footer-socials a:hover {
+    color: #e74c3c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-right {
+        margin: 10px 0;
+    }
+
+    .footer-right p {
+        margin-right: 0;
+    }
+
+    .footer-contact,
+    .footer-nav-links,
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
