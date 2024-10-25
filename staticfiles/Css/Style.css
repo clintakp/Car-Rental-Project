@@ -127,7 +127,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../Images/aston-martin-hire-nz-rental-header-2589.jpg') no-repeat center center; /* Center image */
+    background: url('../images/aston-martin-hire-nz-rental-header-2589.jpg') no-repeat center center; /* Center image */
     background-size: cover;
     width: 100%;
     min-height: 60vh;
