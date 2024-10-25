@@ -127,7 +127,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../Images/aston-martin-hire-nz-rental-header-2589.jpg') no-repeat center center; /* Center image */
+    background: url('../images/aston-martin-hire-nz-rental-header-2589.jpg') no-repeat center center; /* Center image */
     background-size: cover;
     width: 100%;
     min-height: 60vh;
@@ -572,7 +572,7 @@ section {
 
 /*Reservation Header Section */
 .Reservation-header-section {
-    background-image: url('../Images/reservationpage.webp');
+    background-image: url('../images/reservationpage.webp');
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -1114,7 +1114,7 @@ section {
 
 /*Booking Header Section */
 .manage-booking-header-section {
-    background-image: url('../Images/managebookingpage.webp');
+    background-image: url('../images/');
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -1197,7 +1197,7 @@ section {
 
 /* Contact Us Header Section */
 .contact-header-section {
-    background-image: url('../Images/contactusspage.webp');
+    background-image: url('../images/contactusspage.webp');
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -1329,15 +1329,15 @@ textarea {
 }
 
 .icon-map::before {
-    background-image: url('../Images/map-x.svg');
+    background-image: url('../images/map-x.svg');
 }
 
 .icon-phone::before {
-    background-image: url('../Images/phone-x-.svg');
+    background-image: url('../images/phone-x-.svg');
 }
 
 .icon-email::before {
-    background-image: url('../Images/email-x-.svg');
+    background-image: url('../images/email-x-.svg');
 }
 
 .info-item p {
