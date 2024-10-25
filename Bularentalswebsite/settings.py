@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
-#import dj_database_url
+import dj_database_url
 from django.contrib import messages
+import logging
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,12 +82,12 @@ WSGI_APPLICATION = 'Bularentalswebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-#if os.environ.get('DJANGO_PRODUCTION'):  # Detect if in production
-    #DATABASES = {
-        #'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    #}
-#else:
-DATABASES = {
+if os.environ.get('DJANGO_PRODUCTION'):  # Detect if in production
+    DATABASES = {
+        'default': dj_database_url.config(default=os.environ.get('JAWSDB_URL'))
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bularentalswebsite',
@@ -142,7 +144,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Bularentalswebsite/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
@@ -156,5 +157,8 @@ EMAIL_HOST_USER = 'clintonakpometoba@gmail.com'
 EMAIL_HOST_PASSWORD = 'crmd nnee kega msfa'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'clintonakpometoba@gmail.com'
+
+logger = logging.getLogger(__name__)
+logger.debug(f"Database URL: {os.environ.get('JAWSDB_URL')}")
 
 django_heroku.settings(locals())
