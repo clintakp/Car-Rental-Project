@@ -9,6 +9,7 @@ mysqlclient = "*"
 validate-email = "*"
 six = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 
