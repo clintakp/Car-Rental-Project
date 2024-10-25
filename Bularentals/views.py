@@ -126,7 +126,7 @@ def contact_us(request):
     else:
         form = ContactForm()  # Create an empty form for GET requests
 
-    return render(request, 'home/contact_us.html', {'form': form})
+    return render(request, 'home/Contact_us.html', {'form': form})
 
 def contact_success(request):
     return render(request, 'contact_success.html')
