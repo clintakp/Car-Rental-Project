@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<section class="contact-header-section">
+    <div class="contact-header-content">
+        <h2>Contact Us</h2>
+        <p>We will be happy to assist you with any questions you may have</p>
+    </div>
+</section>
+
+<section class="contact-form-section">
+    <div class="contact-form-container">
+        <form action="{% url 'contact_us' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'partials/messages.html' %}
+            <div class="input-row">
+                <select name="feedback_type" required>
+                    <option value="" disabled selected>Feedback Type</option>
+                    <option value="Question">Question</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Suggestion">Suggestion</option>
+                </select>
+            </div>          
+            <div class="input-row">
+                <input type="text" name="subject" placeholder="Subject" maxlength="50" required>
+            </div>
+            <div class="input-row">
+                {{ form.question }}
+            </div>
+            <div class="input-row">
+                <label for="id_attachment">Attachments:</label>
+                <input type="file" name="attachment" id="id_attachment">
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="send-btn">Send</button>
+                <button type="reset" class="clear-btn">Clear form</button>
+            </div>
+        </form>
+        <div class="contact-info"> 
+            <div class="info-item"> 
+                <div class="icon icon-map"></div> 
+                <p>Visit Us<br>Westpac Street, Laucala Beach, Suva, Fiji</p> 
+            </div>
+            <div class="info-item"> 
+                <div class="icon icon-phone"></div> 
+                <p>Call Us<br>123.456.7890</p> 
+            </div>
+            <div class="info-item">
+                <div class="icon icon-email"></div> 
+                <p>Contact Us<br>contact@rentacar.com</p> 
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
