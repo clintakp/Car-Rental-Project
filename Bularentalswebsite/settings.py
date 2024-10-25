@@ -15,7 +15,6 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from django.contrib import messages
-import logging
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,19 +83,19 @@ WSGI_APPLICATION = 'Bularentalswebsite.wsgi.application'
 
 if os.environ.get('DJANGO_PRODUCTION'):  # Detect if in production
     DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('JAWSDB_URL'))
+        'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
 else:
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bularentalswebsite',
-        'USER': 'Clinton',
-        'PASSWORD': 'Eroh6856!',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'bularentalswebsite',
+            'USER': 'Clinton',
+            'PASSWORD': 'Eroh6856!',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
     }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -157,8 +156,5 @@ EMAIL_HOST_USER = 'clintonakpometoba@gmail.com'
 EMAIL_HOST_PASSWORD = 'crmd nnee kega msfa'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'clintonakpometoba@gmail.com'
-
-logger = logging.getLogger(__name__)
-logger.debug(f"Database URL: {os.environ.get('JAWSDB_URL')}")
 
 django_heroku.settings(locals())
