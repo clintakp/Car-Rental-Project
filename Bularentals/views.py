@@ -10,8 +10,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from .models import Contact
 from .forms import ContactForm
-import logging
-from django.http import Http404
+
 
 def home(request):
     return render(request, 'home/Home.html')
@@ -23,27 +22,10 @@ def about_us(request):
     return render(request, 'home/About_us.html')
 
 def fleet(request):
-    sort_by = request.GET.get('sort', 'daily_rate')
-
-    # List of valid sort fields
-    valid_sort_fields = ['daily_rate', 'license_plate', 'status', 'brand', 'model']
-    
-    if sort_by not in valid_sort_fields:
-        sort_by = 'daily_rate'  # Default sort
-
     vehicles = Vehicles.objects.all()
-
-    try:
-        vehicles = vehicles.order_by(sort_by)
-    except Exception as e:
-        # Log the error or raise an Http404
-        print(f"Error ordering vehicles: {e}")
-        raise Http404("Invalid sort field")
-
+    sort_by = request.GET.get('sort', 'daily_rate')
+    vehicles = vehicles.order_by(sort_by)
     return render(request, 'home/Fleet.html', {'vehicles': vehicles})
-
-
-logger = logging.getLogger(__name__)
 
 def My_booking(request):
     return render(request, 'home/Booking.html')
