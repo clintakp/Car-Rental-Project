@@ -40,7 +40,7 @@ def fleet(request):
         print(f"Error ordering vehicles: {e}")
         raise Http404("Invalid sort field")
 
-    return render(request, 'home/fleet.html', {'vehicles': vehicles})
+    return render(request, 'home/Fleet.html', {'vehicles': vehicles})
 
 
 logger = logging.getLogger(__name__)
