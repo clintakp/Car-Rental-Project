@@ -2,55 +2,58 @@
 
 {% load static %}
 {% block content %}
-<section class="contact-header-section">
-    <div class="contact-header-content">
-        <h2>Contact Us</h2>
-        <p>We will be happy to assist you with any questions you may have</p>
-    </div>
-</section>
-
-<section class="contact-form-section">
-    <div class="contact-form-container">
-        <form action="{% url 'contact_us' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% include 'partials/messages.html' %}
-            <div class="input-row">
-                <select name="feedback_type" required>
-                    <option value="" disabled selected>Feedback Type</option>
-                    <option value="Question">Question</option>
-                    <option value="Complaint">Complaint</option>
-                    <option value="Suggestion">Suggestion</option>
-                </select>
-            </div>          
-            <div class="input-row">
-                <input type="text" name="subject" placeholder="Subject" maxlength="50" required>
-            </div>
-            <div class="input-row">
-                {{ form.question }}
-            </div>
-            <div class="input-row">
-                <label for="id_attachment">Attachments:</label>
-                <input type="file" name="attachment" id="id_attachment">
-            </div>
-            <div class="form-buttons">
-                <button type="submit" class="send-btn">Send</button>
-                <button type="reset" class="clear-btn">Clear form</button>
-            </div>
-        </form>
-        <div class="contact-info"> 
-            <div class="info-item"> 
-                <div class="icon icon-map"></div> 
-                <p>Visit Us<br>Westpac Street, Laucala Beach, Suva, Fiji</p> 
-            </div>
-            <div class="info-item"> 
-                <div class="icon icon-phone"></div> 
-                <p>Call Us<br>123.456.7890</p> 
-            </div>
-            <div class="info-item">
-                <div class="icon icon-email"></div> 
-                <p>Contact Us<br>contact@rentacar.com</p> 
-            </div>
+<div class="wrapper">
+    <section class="contact-header-section bg-light text-center py-5" style="background-image: url('static/images/contactusspage.webp');">
+        <div class="container text-center">
+            <h2 class="display-4 mb-3 text-white font-weight-bold">Contact Us</h2>
+            <p class="lead text-white font-weight-bold">We will be happy to assist you with any questions you may have</p>
         </div>
-    </div>
-</section>
+    </section>
+    
+    <section class="contact-form-section py-5">
+        <div class="container d-flex justify-content-between">
+            <form action="{% url 'contact_us' %}" method="post" enctype="multipart/form-data" class="bg-light p-4 rounded shadow-sm w-50">
+                {% csrf_token %}
+                {% include 'partials/messages.html' %}
+                <div class="mb-3">
+                    <select name="feedback_type" class="form-select" required>
+                        <option value="" disabled selected>Feedback Type</option>
+                        <option value="Question">Question</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Suggestion">Suggestion</option>
+                    </select>
+                </div>          
+                <div class="mb-3">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" maxlength="50" required>
+                </div>
+                <div class="mb-3">
+                    {{ form.question }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_attachment" class="form-label">Attachments:</label>
+                    <input type="file" name="attachment" id="id_attachment" class="form-control">
+                </div>
+                <div class="d-flex justify-content-between w-100">
+                    <button type="submit" class="btn btn-danger">Send</button>
+                    <button type="reset" class="btn btn-secondary">Clear form</button>
+                </div>            
+            </form>
+    
+            <div class="contact-info ms-2 text-start">
+                <div class="info-item mb-3 d-flex align-items-center">
+                    <i class="bi bi-geo-alt-fill text-danger me-2" style="font-size: 2rem;"></i>
+                    <p>Visit Us<br>Westpac Street, Laucala Beach, Suva, Fiji</p>
+                </div>
+                <div class="info-item mb-3 d-flex align-items-center">
+                    <i class="bi bi-telephone-fill text-danger me-2" style="font-size: 2rem;"></i>
+                    <p>Call Us<br>123.456.7890</p>
+                </div>
+                <div class="info-item d-flex align-items-center">
+                    <i class="bi bi-envelope-fill text-danger me-2" style="font-size: 2rem;"></i>
+                    <p>Contact Us<br>contact@rentacar.com</p>
+                </div>
+            </div>               
+        </div>
+    </section>
+</div>
 {% endblock %}

@@ -1,23 +1,179 @@
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
+.logo-section {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.logo-section img {
+    height: 5em;
+}
+
+.top-row {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+/* Center the section title and add a custom underline */
+
+#about {
+    background-color: #e9e9e9dc; /* Very light grey color */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+}
+
+/* Custom underline under the title */
+.underline {
+    width: 100px;
+    height: 3px;
+    background-color: #e74c3c; /* Adjust this to the color you want */
+    margin-top: 10px;
+}
+
+/* Ensure proper spacing between elements */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+    #about p {
+        font-size: 1rem;
     }
-  }
-  
-  .showPasswordToggle {
-    cursor: pointer;
-    transition: all;
-  }
-  
-  .showPasswordToggle:hover {
-    transform: scale(1.2);
-  }
+}
+
+/* Subtle border and hover effect */
+.service-card {
+    border: 1px solid #ddd; /* Light border color */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #f7f7f7; /* Light grey background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow on hover */
+}
+
+/* Make the H1 text red */
+.red-title {
+    color: red; /* Change to the desired red color */
+}
+
+/* Card hover effect */
+.feedback-card:hover {
+    background-color: #f8f9fa; /* Light grey color on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+#homepagefeedback {
+    background-color: #e9e9e9dc; /* Very light grey color */
+}
+
+/* Footer links */
+.footer-link {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect: blue text and red underline */
+.footer-link:hover {
+    color: #007bff; /* Blue color */
+    text-decoration: underline;
+    text-decoration-color: red; 
+}
+
+.footer-logo {
+    height: 5em;
+    width: auto;
+}
+
+.Reservation-header-section {
+    position: relative;
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+.Reservation-header-section .container {
+    position: relative; /* Keeps the text above any potential overlay */
+    z-index: 2; /* Ensures text is above the background */
+}
+
+.Reservation-header-section h2,
+.Reservation-header-section p {
+    color: white; /* Change text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to improve readability */
+}
+
+.assistance-section {
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+.assistance-section .section-title {
+    font-size: 2rem; /* Title size */
+    font-weight: 700; /* Bold title */
+    color: #333; /* Dark text color */
+}
+
+.assistance-section h3 {
+    margin-top: 1.5rem; /* Spacing above subheadings */
+    color: #e74c3c; /* A standout color for headings */
+}
+
+.assistance-section p {
+    margin-bottom: 1rem; /* Space below paragraphs */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .assistance-section .section-title {
+        font-size: 1.5rem; /* Smaller title on mobile */
+    }
+}
+
+.custom-bg {
+    background-color: #e8f5e9; /* A very light shade of green */
+}
+
+.custom-bg .form-label {
+    color: #000; /* Set label text color to black */
+}
+
+.contact-info p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.contact-form-section .btn-danger {
+    background-color: #ff4b4b;
+}
+
+html, body {
+    height: 100%;  /* Ensure the body takes full height */
+    margin: 0;     /* Remove default margin */
+}
+
+.wrapper {
+    min-height: calc(100vh - 80px); /* Adjust this value based on your footer height */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    position: relative; /* Keep the footer in the normal flow */
+    bottom: 0;         /* Align the footer at the bottom of the wrapper */
+    width: 100%;       /* Ensure the footer spans the full width */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.logo-text {
+    font-family: 'Poppins', sans-serif; /* Change font to Poppins */
+    font-weight: 700; /* Make it bolder */
+    color: #000000; /* Adjust the color if needed */
+}

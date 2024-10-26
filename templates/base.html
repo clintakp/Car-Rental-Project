@@ -5,96 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {% block title %} Bula rentals | Car Rental Service in Fiji {% endblock %}</title>
-    <link href="{% static 'Css/Style.css' %}" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-    
+    <link href="{% static 'Css/main.css'%}" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="/">
-                <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo">
-            </a>
+    <header class="py-3">
+        {% if user.is_authenticated %}
+        <div class="d-flex top-row">
+            <div class="logo-section d-flex align-items-center">
+                <a href="/" class="d-flex align-items-center text-decoration-none">
+                    <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" height="50">
+                    <h2 class="ms-2 mb-0 logo-text">BULA <span class="fw-normal"><br>Rentals</span></h2>
+                </a>
+            </div>                      
+            <div>
+                <button class="btn btn-outline-secondary me-2" onclick="window.location.href='My_booking'">My Booking</button>
+                <button class="btn btn-outline-secondary me-4" onclick="window.location.href='authenication/logout'">Logout</button>
+            </div>
         </div>
-        <div class="header-right">
-            {% if user.is_authenticated %}
-            <div class="user-registration">
-                <ul class="user-reg">
-                    <li><a href="My_booking"> Manage Booking </a></li>
-                    <li><a href="{% url 'logout' %}"> Logout </a></li>
-                </ul>
+        <nav class="d-flex align-items-center justify-content-end me-4">
+            <a href="/" class="me-4 text-decoration-none text-dark">Home</a>
+            <a href="reservation" class="me-4 text-decoration-none text-dark">Reservation</a>
+            <a href="about_us" class="me-4 text-decoration-none text-dark">About Us</a>
+            <a href="fleet" class="me-4 text-decoration-none text-dark">Fleet</a>
+            <a href="My_booking" class="me-4 text-decoration-none text-dark">My Booking</a>
+            <a href="contact_us" class="text-decoration-none text-dark">Contact Us</a>
+        </nav>
+        {% else %}
+        <div class="d-flex top-row">
+            <div class="logo-section d-flex align-items-center">
+                <a href="/" class="d-flex align-items-center text-decoration-none">
+                    <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" height="50">
+                    <h2 class="ms-2 mb-0 logo-text">BULA <span class="fw-normal"><br>Rentals</span></h2>
+                </a>
+            </div>                     
+            <div>
+                <button class="btn btn-outline-secondary me-2" onclick="window.location.href='authenication/signup'">Signup</button>
+                <button class="btn btn-outline-secondary me-4" onclick="window.location.href='authenication/login'">Login</button>                
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/"> HOME </a></li>
-                    <li><a href="reservation"> RESERVATION </a></li>
-                    <li><a href="about_us"> ABOUT US </a></li>
-                    <li><a href="fleet"> FLEET </a></li>
-                    <li><a href="contact_us"> CONTACT US </a></li>
-                </ul>
-            </nav>
-            {% else %}
-            <div class="user-registration">
-                <ul class="user-reg">
-                    <li><a href="authenication/signup"> Signup </a></li>
-                    <li><a href="authenication/login"> Login </a></li>
-                </ul>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/"> HOME </a></li>
-                    <li><a href="reservation"> RESERVATION </a></li>
-                    <li><a href="about_us"> ABOUT US </a></li>
-                    <li><a href="fleet"> FLEET </a></li>
-                    <li><a href="My_booking"> MY BOOKING </a></li>
-                    <li><a href="contact_us"> CONTACT US </a></li>
-                </ul>
-            </nav>
-            {% endif %}
-        </div>        
+        </div>
+        <nav class="d-flex align-items-center justify-content-end me-4">
+            <a href="/" class="me-4 text-decoration-none text-dark">Home</a>
+            <a href="reservation" class="me-4 text-decoration-none text-dark">Reservation</a>
+            <a href="about_us" class="me-4 text-decoration-none text-dark">About Us</a>
+            <a href="fleet" class="me-4 text-decoration-none text-dark">Fleet</a>
+            <a href="My_booking" class="me-4 text-decoration-none text-dark">My Booking</a>
+            <a href="contact_us" class="text-decoration-none text-dark">Contact Us</a>
+        </nav>
+        {% endif %}
     </header>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <main>
         {% block content %}
     
         {% endblock %}
     </main>
-    <footer>
-        <div class="footer-logo">
-            <a href="/">
-                <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo">
-            </a> 
-            <p> Where quality meets convenience: Rent with us and enjoy the journey </p>
-        </div>
-        <div class="footer-right">
-            <div class="footer-infos">
-                <ul class="footer-contact">
-                    <li><a href="tel:+6798007890">📞 +679-8007890</a></li>
-                    <li><a href="mailto:clintonemail@rentacar.com">📧 clintonemail@rentacar.com</a></li>
-                    <li><a href="skype:your.skype.id?call">💬 Skype: your.skype.id</a></li>
-                </ul>
+    <footer class="bg-dark text-light py-4">
+        <div class="container-fluid px-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start mb-4 mb-md-0 d-flex align-items-center">
+                    <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" class="footer-logo">
+                    <div class="ms-3">
+                        <h2 class="mb-0">BULA <span class="fw-normal"><br>Rentals</span></h2>
+                        <p class="mt-1 mb-0">Where quality meets convenience: Rent with us and enjoy the journey.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end" style="padding-right: 1rem;">
+                    <div class="mb-3">
+                        <ul class="list-inline mb-1">
+                            <li class="list-inline-item me-3"><a href="tel:+6798007890" class="footer-link"><span class="me-1">📞</span> +679-8007890</a></li>
+                            <li class="list-inline-item me-3"><a href="mailto:clintonemail@rentacar.com" class="footer-link"><span class="me-1">📧</span> clintonemail@rentacar.com</a></li>
+                            <li class="list-inline-item"><a href="skype:your.skype.id?call" class="footer-link"><span class="me-1">💬</span> Skype: your.skype.id</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <ul class="list-inline mb-3">
+                            <li class="list-inline-item mx-2"><a href="/" class="footer-link">HOME</a></li>
+                            <li class="list-inline-item mx-2"><a href="reservation" class="footer-link">RESERVATION</a></li>
+                            <li class="list-inline-item mx-2"><a href="about_us" class="footer-link">ABOUT US</a></li>
+                            <li class="list-inline-item mx-2"><a href="fleet" class="footer-link">FLEET</a></li>
+                            <li class="list-inline-item mx-2"><a href="My_booking" class="footer-link">MY BOOKING</a></li>
+                            <li class="list-inline-item mx-2"><a href="contact_us" class="footer-link">CONTACT US</a></li>
+                        </ul>
+                    </nav>
+                    <nav>
+                        <ul class="list-inline">
+                            <li class="list-inline-item mx-2"><a href="https://www.facebook.com/yourpage" target="_blank" class="footer-link">📘 Facebook</a></li>
+                            <li class="list-inline-item mx-2"><a href="https://twitter.com/yourprofile" target="_blank" class="footer-link">🐦 Twitter</a></li>
+                            <li class="list-inline-item mx-2"><a href="https://www.instagram.com/yourprofile" target="_blank" class="footer-link">📸 Instagram</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <nav>
-                <ul class="footer-nav-links">
-                    <li><a href="/"> HOME </a></li>
-                    <li><a href="reservation"> RESERVATION </a></li>
-                    <li><a href="about_us"> ABOUT US </a></li>
-                    <li><a href="fleet"> FLEET </a></li>
-                    <li><a href="My_booking"> MY BOOKING </a></li>
-                    <li><a href="contact_us"> CONTACT US </a></li>
-                </ul>
-            </nav> 
-            <nav>
-                <ul class="footer-socials">
-                    <a href="https://www.facebook.com/yourpage" target="_blank">📘 Facebook</a>
-                    <a href="https://twitter.com/yourprofile" target="_blank">🐦 Twitter</a>
-                    <a href="https://www.instagram.com/yourprofile" target="_blank">📸 Instagram</a>
-                </ul>
-            </nav>  
+            <p class="text-center mt-5 mb-0">&copy; 2024 Bula Rentals Fiji | All rights reserved.</p>
         </div>
-        <!--<p>&copy; 2024 Bula Rentals Fiji|All rights reserved.</p>-->
-    </footer>
+    </footer>                    
 </body>
 </html>

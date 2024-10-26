@@ -12,6 +12,9 @@ from .models import Contact
 from .forms import ContactForm
 
 
+def index(request):
+    return render(request, 'index.html')
+
 def home(request):
     return render(request, 'home/Home.html')
 
@@ -111,4 +114,4 @@ def contact_us(request):
     return render(request, 'home/Contact_us.html', {'form': form})
 
 def contact_success(request):
-    return render(request, 'contact_success.html')
+    return render(request, 'home/contact_success.html')

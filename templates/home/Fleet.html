@@ -2,15 +2,22 @@
 
 {% load static %}
 {% block content %}
-<section class="fleet-header-section">
-    <h2>COME TAKE A LOOK AT OUR AWESOME FLEET AND CHOOSE YOUR BEST OPTION!</h2>
-    <p>Our company offers a wide range of vehicles for you to choose from, including economy cars, sedans, SUVs, vans and trucks. Our service gives you peace of mind when you're on the road, knowing that help is just a phone call away.</p>
+<section class="fleet-header-section bg-light py-5">
+    <div class="container">
+        <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-md-6 text-left">
+                <h2 class="font-weight-bold mb-4">COME TAKE A LOOK AT OUR AWESOME FLEET AND CHOOSE YOUR BEST OPTION!</h2>
+            </div>
+            <div class="col-md-6 text-right">
+                <p class="lead mb-4">Our company offers a wide range of vehicles for you to choose from, including economy cars, sedans, SUVs, vans, and trucks. Our service gives you peace of mind when you're on the road, knowing that help is just a phone call away.</p>
+            </div>
+        </div>
+    </div>
 </section>
-
 <!-- Search Form -->
-<form class="searchbuttonform" method="get" action="{% url 'vehicle_search' %}" class="d-flex">
+<form class="searchbuttonform d-flex flex-wrap align-items-center" method="get" action="{% url 'vehicle_search' %}">
     
-    <select name="brand" class="form-control me-2">
+    <select name="brand" class="form-control me-2 mb-2" style="flex: 1;">
         <option value="">All Brands</option>
         <option value="BMW" {% if brand_filter == 'BMW' %}selected{% endif %}>BMW</option>
         <option value="Volkswagen" {% if brand_filter == 'Volkswagen' %}selected{% endif %}>Volkswagen</option>
@@ -30,55 +37,64 @@
         <option value="Hyundai" {% if brand_filter == 'Hyundai' %}selected{% endif %}>Hyundai</option>
     </select>
 
-    <select name="size" class="form-control me-2">
+    <select name="size" class="form-control me-2 mb-2" style="flex: 1;">
         <option value="">All Sizes</option>
         <option value="Small" {% if size_filter == 'Small' %}selected{% endif %}>Small</option>
         <option value="Medium" {% if size_filter == 'Medium' %}selected{% endif %}>Medium</option>
         <option value="Large" {% if size_filter == 'Large' %}selected{% endif %}>Large</option>
     </select>
 
-    <select name="classes" class="form-control me-2">
+    <select name="classes" class="form-control me-2 mb-2" style="flex: 1;">
         <option value="">All Classes</option>
         <option value="Economy" {% if classes_filter == 'Economy' %}selected{% endif %}>Economy</option>
         <option value="Hybrid" {% if classes_filter == 'Hybrid' %}selected{% endif %}>Hybrid</option>
         <option value="Premium" {% if classes_filter == 'Premium' %}selected{% endif %}>Premium</option>
         <option value="Luxury" {% if classes_filter == 'Luxury' %}selected{% endif %}>Luxury</option>
     </select>
-    <input class="form-control me-2" type="text" name="q" placeholder="Search" aria-label="Search" value="{{ request.GET.q }}" maxlength="50">
 
-    <button class="btn-outline-success" type="submit">Search</button>
+    <input class="form-control me-2 mb-2" type="text" name="q" placeholder="Search" aria-label="Search" value="{{ request.GET.q }}" maxlength="50" style="flex: 1;">
+
+    <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 <!-- End of Search Form -->
 
-<section class="fleet-section">
-    <div class="fleet-section-vehicle-container">
+<section class="fleet-section py-5">
+    <div class="wrapper">
         {% if vehicles %}
-        {% for vehicle in vehicles %}
-            <div class="vehicle">
-                <div class="vehicle-image">
-                    <img src="{% static vehicle.image_url %}" alt="{{ vehicle.brand }} {{ vehicle.model }}">
-                    <ul class="list-group list-group-horizontal w-100 mb-3 mt-4 border-top pt-3">
-                        <li class="list-group-item flex-fill d-flex align-items-center justify-content-center gap-1 p-2 border-0" title="{{ vehicle.seating_capacity }} passengers">
-                          <span class="bi bi-person-fill h3 m-0 d-flex lh-1" aria-hidden="true"></span>
-                          <span class="h5 fw-normal m-0 lh-1">{{ vehicle.seating_capacity }}</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="vehicle-details">
-                    <div class="vehicle-class">{{ vehicle.size }}: {{ vehicle.classes }}</div>
-                    <h3 class="vehicle-name">{{ vehicle.brand }} {{ vehicle.model }}</h3>
-                    <p class="vehicle-description">{{ vehicle.description }}</p>
-                    <button class="book-btn">Book Now</button>
-                </div>
-                <div class="vehicle-price">
-                    <h1> Price from: </h1>
-                    <p class="price">${{ vehicle.daily_rate }}</p>
+            <div class="container">
+                <div class="row">
+                    {% for vehicle in vehicles %}
+                        <div class="col-md-4 mb-4">
+                            <div class="vehicle border p-3">
+                                <div class="vehicle-image mb-3">
+                                    <img src="{% static vehicle.image_url %}" alt="{{ vehicle.brand }} {{ vehicle.model }}" class="img-fluid">
+                                    <ul class="list-group list-group-horizontal w-100 mb-3 mt-4 border-top pt-3">
+                                        <li class="list-group-item flex-fill d-flex align-items-center justify-content-center gap-1 p-2 border-0" title="{{ vehicle.seating_capacity }} passengers">
+                                            <span class="bi bi-person-fill h3 m-0 d-flex lh-1" aria-hidden="true"></span>
+                                            <span class="h5 fw-normal m-0 lh-1">{{ vehicle.seating_capacity }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="vehicle-details">
+                                    <div class="vehicle-class">{{ vehicle.size }} : {{ vehicle.classes }}</div>
+                                    <h3 class="vehicle-name">{{ vehicle.brand }} {{ vehicle.model }}</h3>
+                                    <p class="vehicle-description">{{ vehicle.description }}</p>
+                                    <button class="btn btn-primary book-btn">Book Now</button>
+                                </div>
+                                <div class="vehicle-price mt-3">
+                                    <h5>Price from:</h5>
+                                    <p class="price">${{ vehicle.daily_rate }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
-    {% else %}
-        <p>No vehicles available at this time. Please check back later.</p>
-    {% endif %}
-    </div>
+        {% else %}
+            <div class="container">
+                <p class="text-center">No vehicles available at this time, Please check back later.</p>
+            </div>
+        {% endif %}
+    </div>    
 </section>
 {% endblock%}
