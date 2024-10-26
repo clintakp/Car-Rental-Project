@@ -19,19 +19,12 @@
                     <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" height="50">
                     <h2 class="ms-2 mb-0 logo-text">BULA <span class="fw-normal"><br>Rentals</span></h2>
                 </a>
-            </div>                      
+            </div>
             <div>
                 <button class="btn btn-outline-secondary me-2" onclick="window.location.href='My_booking'">My Booking</button>
                 <button class="btn btn-outline-secondary me-4" onclick="window.location.href='authenication/logout'">Logout</button>
             </div>
         </div>
-        <nav class="d-flex align-items-center justify-content-end me-4">
-            <a href="/" class="me-4 text-decoration-none text-dark">Home</a>
-            <a href="reservation" class="me-4 text-decoration-none text-dark">Reservation</a>
-            <a href="about_us" class="me-4 text-decoration-none text-dark">About Us</a>
-            <a href="fleet" class="me-4 text-decoration-none text-dark">Fleet</a>
-            <a href="contact_us" class="text-decoration-none text-dark">Contact Us</a>
-        </nav>
         {% else %}
         <div class="d-flex top-row">
             <div class="logo-section d-flex align-items-center">
@@ -39,22 +32,45 @@
                     <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" height="50">
                     <h2 class="ms-2 mb-0 logo-text">BULA <span class="fw-normal"><br>Rentals</span></h2>
                 </a>
-            </div>                     
+            </div>
             <div>
                 <button class="btn btn-outline-secondary me-2" onclick="window.location.href='authenication/signup'">Signup</button>
-                <button class="btn btn-outline-secondary me-4" onclick="window.location.href='authenication/login'">Login</button>                
+                <button class="btn btn-outline-secondary me-4" onclick="window.location.href='authenication/login'">Login</button>
             </div>
         </div>
-        <nav class="d-flex align-items-center justify-content-end me-4">
-            <a href="/" class="me-4 text-decoration-none text-dark">Home</a>
-            <a href="reservation" class="me-4 text-decoration-none text-dark">Reservation</a>
-            <a href="about_us" class="me-4 text-decoration-none text-dark">About Us</a>
-            <a href="fleet" class="me-4 text-decoration-none text-dark">Fleet</a>
-            <a href="My_booking" class="me-4 text-decoration-none text-dark">My Booking</a>
-            <a href="contact_us" class="text-decoration-none text-dark">Contact Us</a>
-        </nav>
         {% endif %}
-    </header>
+    
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- Nav Links in Collapsible -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-dark">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="reservation" class="nav-link text-dark">Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about_us" class="nav-link text-dark">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="fleet" class="nav-link text-dark">Fleet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact_us" class="nav-link text-dark">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>    
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
