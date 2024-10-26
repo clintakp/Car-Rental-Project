@@ -1,0 +1,17 @@
+#header{
+    background: rgb(0, 62, 69);
+    color: #fff;
+}
+
+div.breadcrumbs {
+    background: rgb(55, 58, 54);
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.module h2, .module caption, .inline-group h2{
+    background: rgb(0, 62, 69);
+}

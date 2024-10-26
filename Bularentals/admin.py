@@ -6,6 +6,7 @@ from .models import Contact
 class VehiclesAdmin(admin.ModelAdmin):
     list_display = ('license_plate', 'status', 'daily_rate', 'brand', 'model')
     search_fields = ('license_plate', 'brand', 'model')
+    list_per_page = 5
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
