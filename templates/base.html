@@ -81,43 +81,89 @@
     </main>
     <footer class="bg-dark text-light py-4">
         <div class="container-fluid px-4">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-md-start mb-4 mb-md-0 d-flex align-items-center">
-                    <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" class="footer-logo">
+            <div class="row">
+                <!-- Logo and Tagline -->
+                <div class="col-md-6 d-flex align-items-start mb-4 mb-md-0">
+                    <a href="/" class="d-flex align-items-start">
+                        <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" class="footer-logo" style="max-width: 100px;">
+                    </a>
                     <div class="ms-3">
                         <h2 class="mb-0">BULA <span class="fw-normal"><br>Rentals</span></h2>
                         <p class="mt-1 mb-0">Where quality meets convenience: Rent with us and enjoy the journey.</p>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end" style="padding-right: 1rem;">
-                    <div class="mb-3">
-                        <ul class="list-inline mb-1">
-                            <li class="list-inline-item me-3"><a href="tel:+6798007890" class="footer-link"><span class="me-1">📞</span> +679-8007890</a></li>
-                            <li class="list-inline-item me-3"><a href="mailto:clintonemail@rentacar.com" class="footer-link"><span class="me-1">📧</span> clintonemail@rentacar.com</a></li>
-                            <li class="list-inline-item"><a href="skype:your.skype.id?call" class="footer-link"><span class="me-1">💬</span> Skype: your.skype.id</a></li>
-                        </ul>
+    
+                <!-- Footer Toggle Button for Mobile View Only -->
+                <div class="col-12 d-md-none mb-3">
+                    <button class="btn btn-outline-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#footerCollapse" aria-expanded="false" aria-controls="footerCollapse">
+                        <i class="bi bi-three-dots"></i> <!-- Optional icon -->
+                    </button>
+                </div>
+    
+                <!-- Contact, Nav, and Social Links, Right-Aligned on Larger Screens -->
+                <div class="col-md-6 text-md-end">
+                    <!-- Collapsible Section for Mobile View Only -->
+                    <div class="collapse d-md-block" id="footerCollapse">
+                        <!-- Contact Links -->
+                        <div class="mb-3">
+                            <ul class="list-inline mb-1">
+                                <li class="list-inline-item me-3">
+                                    <a href="tel:+6798007890" class="footer-link">
+                                        <i class="bi bi-telephone-fill me-1"></i> +679-8007890
+                                    </a>
+                                </li>
+                                <li class="list-inline-item me-3">
+                                    <a href="mailto:clintonemail@rentacar.com" class="footer-link">
+                                        <i class="bi bi-envelope-fill me-1"></i> clintonemail@rentacar.com
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="skype:your.skype.id?call" class="footer-link">
+                                        <i class="bi bi-chat-dots-fill me-1"></i> Skype: your.skype.id
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <!-- Navigation Links -->
+                        <div>
+                            <ul class="list-inline mb-3">
+                                <li class="list-inline-item mx-2"><a href="/" class="footer-link">HOME</a></li>
+                                <li class="list-inline-item mx-2"><a href="reservation" class="footer-link">RESERVATION</a></li>
+                                <li class="list-inline-item mx-2"><a href="about_us" class="footer-link">ABOUT US</a></li>
+                                <li class="list-inline-item mx-2"><a href="fleet" class="footer-link">FLEET</a></li>
+                                <li class="list-inline-item mx-2"><a href="My_booking" class="footer-link">MY BOOKING</a></li>
+                                <li class="list-inline-item mx-2"><a href="contact_us" class="footer-link">CONTACT US</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Social Media Links -->
+                        <div>
+                            <ul class="list-inline">
+                                <li class="list-inline-item mx-2">
+                                    <a href="https://www.facebook.com/yourpage" target="_blank" class="footer-link">
+                                        <i class="bi bi-facebook"></i> Facebook
+                                    </a>
+                                </li>
+                                <li class="list-inline-item mx-2">
+                                    <a href="https://twitter.com/yourprofile" target="_blank" class="footer-link">
+                                        <i class="bi bi-twitter"></i> Twitter
+                                    </a>
+                                </li>
+                                <li class="list-inline-item mx-2">
+                                    <a href="https://www.instagram.com/yourprofile" target="_blank" class="footer-link">
+                                        <i class="bi bi-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <nav>
-                        <ul class="list-inline mb-3">
-                            <li class="list-inline-item mx-2"><a href="/" class="footer-link">HOME</a></li>
-                            <li class="list-inline-item mx-2"><a href="reservation" class="footer-link">RESERVATION</a></li>
-                            <li class="list-inline-item mx-2"><a href="about_us" class="footer-link">ABOUT US</a></li>
-                            <li class="list-inline-item mx-2"><a href="fleet" class="footer-link">FLEET</a></li>
-                            <li class="list-inline-item mx-2"><a href="My_booking" class="footer-link">MY BOOKING</a></li>
-                            <li class="list-inline-item mx-2"><a href="contact_us" class="footer-link">CONTACT US</a></li>
-                        </ul>
-                    </nav>
-                    <nav>
-                        <ul class="list-inline">
-                            <li class="list-inline-item mx-2"><a href="https://www.facebook.com/yourpage" target="_blank" class="footer-link">📘 Facebook</a></li>
-                            <li class="list-inline-item mx-2"><a href="https://twitter.com/yourprofile" target="_blank" class="footer-link">🐦 Twitter</a></li>
-                            <li class="list-inline-item mx-2"><a href="https://www.instagram.com/yourprofile" target="_blank" class="footer-link">📸 Instagram</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
+    
+            <!-- Copyright -->
             <p class="text-center mt-5 mb-0">&copy; 2024 Bula Rentals Fiji | All rights reserved.</p>
         </div>
-    </footer>                    
+    </footer>                                    
 </body>
 </html>
