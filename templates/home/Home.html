@@ -5,11 +5,11 @@
 {% include 'partials/messages.html' %}
 <section id="homebooking-hero" class="position-relative text-center text-light bg-dark">
     <div class="container py-5">
-        <div class="mb-4">
-            <h4 class="display-4">BULA</h4>
+        <div class="mb-4 hero-title">
+            <h4>BULA</h4>
             <h2>RENTALS</h2>
         </div>
-        <h1>RENT A CAR!</h1>
+        <h1 style="font-family: 'Roboto', sans-serif; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); margin-top: 40px;">RENT A CAR!</h1>
         <div class="mt-4">
             <form action="#" method="post" class="row g-3">
                 <div class="col-md-3">
@@ -18,7 +18,30 @@
                 </div>
                 <div class="col-md-3">
                     <label for="homebooking-pickup-time" class="form-label"><i class="fa fa-clock"></i> Pick-up Time</label>
-                    <input type="time" class="form-control" id="homebooking-pickup-time" name="pickup_time" required>
+                    <div class="time-input-container">
+                        <input type="text" class="form-control" id="homebooking-pickup-time" name="pickup_time" placeholder="--:--" required>
+                        <span class="time-picker-icon" id="pickup-time-icon">🕒</span>
+                        <div class="time-options" id="pickup-time-options">
+                            <!-- Time options (modify as needed) -->
+                            <div class="clear-time">clear</div>
+                            <div>9:00 AM</div>
+                            <div>10:00 AM</div>
+                            <div>10:30 AM</div>
+                            <div>11:00 AM</div>
+                            <div>11:30 AM</div>
+                            <div>12:00 PM</div>
+                            <div>12:30 PM</div>
+                            <div>1:00 PM</div>
+                            <div>1:30 PM</div>
+                            <div>2:00 PM</div>
+                            <div>2:30 PM</div>
+                            <div>3:00 PM</div>
+                            <div>3:30 PM</div>
+                            <div>4:00 PM</div>
+                            <div>4:30 PM</div>
+                            <div>5:00 PM</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <label for="homebooking-return-date" class="form-label"><i class="fa fa-calendar"></i> Return Date</label>
@@ -26,7 +49,30 @@
                 </div>
                 <div class="col-md-3">
                     <label for="homebooking-return-time" class="form-label"><i class="fa fa-clock"></i> Return Time</label>
-                    <input type="time" class="form-control" id="homebooking-return-time" name="return_time" required>
+                    <div class="time-input-container">
+                        <input type="text" class="form-control" id="homebooking-return-time" name="return_time" placeholder="--:--" required>
+                        <span class="time-picker-icon" id="return-time-icon">🕒</span>
+                        <div class="time-options" id="return-time-options">
+                            <!-- Time options (modify as needed) -->
+                            <div class="clear-time">clear</div>
+                            <div>9:00 AM</div>
+                            <div>10:00 AM</div>
+                            <div>10:30 AM</div>
+                            <div>11:00 AM</div>
+                            <div>11:30 AM</div>
+                            <div>12:00 PM</div>
+                            <div>12:30 PM</div>
+                            <div>1:00 PM</div>
+                            <div>1:30 PM</div>
+                            <div>2:00 PM</div>
+                            <div>2:30 PM</div>
+                            <div>3:00 PM</div>
+                            <div>3:30 PM</div>
+                            <div>4:00 PM</div>
+                            <div>4:30 PM</div>
+                            <div>5:00 PM</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 offset-md-3">
                     <label for="homebooking-car-type" class="form-label">Car Type</label>
@@ -37,13 +83,41 @@
                         <option value="van">Van</option>
                     </select>
                 </div>
-                <div class="col-md-3 offset-md-4"">
+                <div class="col-md-3 offset-md-4">
                     <button type="submit" class="btn btn-danger btn-lg w-100">Make a Reservation</button>
-                </div>                
+                </div>
             </form>
         </div>
     </div>
 </section>
+
+<script>
+    $(document).ready(function() {
+        $('.time-picker-icon').on('click', function() {
+            // Toggle the visibility of the time options
+            var optionsDiv = $(this).siblings('.time-options');
+            optionsDiv.toggle();
+        });
+
+        $('.time-options div:not(.clear-time)').on('click', function() {
+            var selectedTime = $(this).text();
+            $(this).closest('.time-input-container').find('input').val(selectedTime);
+            $(this).parent().hide(); // Hide options after selection
+        });
+
+        // Clear time functionality
+        $('.clear-time').on('click', function() {
+            $(this).closest('.time-input-container').find('input').val(''); // Clear the input
+            $(this).parent().hide(); // Hide options after clearing
+        });
+
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.time-input-container').length) {
+                $('.time-options').hide(); // Hide options if clicking outside
+            }
+        });
+    });
+</script>
 
 <style>
     #homebooking-hero {

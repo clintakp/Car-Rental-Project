@@ -13,6 +13,93 @@
     margin-bottom: 1em;
 }
 
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px; /* Increased margin for separation from "RENT A CAR!" */
+    animation: popIn 0.8s ease-in-out; /* Animation */
+}
+
+.hero-title h4 {
+    font-size: 5rem; /* Bigger size for BULA */
+}
+
+.hero-title h2 {
+    font-family: 'Righteous', cursive; /* Bold and stylish decorative font */
+    font-weight: bolder;
+    font-size: 1.5rem; /* Increased size for RENTALS */
+    margin-bottom: 4em; /* Increased margin for separation from "RENT A CAR!" */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.form-label {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1rem; /* Increase font size */
+}
+
+.time-input-container {
+    position: relative;
+}
+
+.time-options {
+    display: none; /* Hide the time options initially */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 150px; /* Set max height for scrolling */
+    overflow-y: auto;
+    background: #fff; /* White background for options */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    color: black; /* Set text color to black */
+}
+
+.time-options div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.time-options div:hover {
+    background: #f0f0f0; /* Light gray background on hover */
+}
+
+.time-options .clear-time {
+    padding: 10px;
+    cursor: pointer;
+    font-size: x-small;
+    font-weight: lighter;
+    color: black; /* Clear button color */
+    text-align: center;
+}
+
+.time-options .clear-time:hover {
+    background: #f0f0f0; /* Light gray background on hover */
+}
+
+.time-picker-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* Center the section title and add a custom underline */
 
 #about {
