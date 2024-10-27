@@ -256,7 +256,20 @@ footer {
 
 /* Hover effect: blue text and red underline */
 .footer-link:hover {
-    color: #007bff; /* Blue color */
+    color: #ffffff; /* Blue color */
     text-decoration: underline;
     text-decoration-color: red; 
+}
+
+@media (max-width: 576px) {
+    .btn-outline-secondary {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+.btn-container .btn {
+    white-space: nowrap;
+    font-size: 0.9rem; /* Adjust as needed */
+   padding: 0.4rem 0.8rem; /* Decrease padding if necessary */
 }
