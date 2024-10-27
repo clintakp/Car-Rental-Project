@@ -7,12 +7,14 @@
     <title> {% block title %} Bula rentals | Car Rental Service in Fiji {% endblock %}</title>
     <link href="{% static 'Css/authstyle.css' %}" rel="stylesheet">
     <link href="{% static 'Css/authmain.css'%}" rel="stylesheet">
+    <link href="{% static 'Css/main.css'%}" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo">
+        <div class="logo-section d-flex align-items-center">
+            <a href="/" class="d-flex align-items-center text-decoration-none">
+                <img src="{% static 'images/logo.png' %}" alt="Bula Rentals Logo" height="50">
+                <h2 class="ms-2 mb-0 logo-text">BULA <span class="fw-normal"><br>Rentals</span></h2>
             </a>
         </div>
     </header>
