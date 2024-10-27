@@ -70,9 +70,9 @@
 .time-options .clear-time {
     padding: 10px;
     cursor: pointer;
-    font-size: x-small;
-    font-weight: lighter;
-    color: black; /* Clear button color */
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: rgb(33, 150, 239); /* Clear button color */
     text-align: center;
 }
 
