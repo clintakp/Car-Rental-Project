@@ -7,16 +7,25 @@
     height: 5em;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+.logo-text {
+    font-family: 'Poppins', sans-serif; /* Change font to Poppins */
+    font-weight: 700; /* Make it bolder */
+    color: #000000; /* Adjust the color if needed */
+}
+
 .top-row {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1em;
 }
 
+
 .hero-title {
     font-family: 'Poppins', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 40px; /* Increased margin for separation from "RENT A CAR!" */
+    margin-bottom: 40px;
     animation: popIn 0.8s ease-in-out; /* Animation */
 }
 
@@ -72,7 +81,7 @@
     cursor: pointer;
     font-size: 0.8rem;
     font-weight: 200;
-    color: rgb(33, 150, 239); /* Clear button color */
+    color: rgb(33, 150, 239);
     text-align: center;
 }
 
@@ -160,25 +169,6 @@
     background-color: #e9e9e9dc; /* Very light grey color */
 }
 
-/* Footer links */
-.footer-link {
-    color: #ffffff;
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Smooth transition */
-}
-
-/* Hover effect: blue text and red underline */
-.footer-link:hover {
-    color: #007bff; /* Blue color */
-    text-decoration: underline;
-    text-decoration-color: red; 
-}
-
-.footer-logo {
-    height: 5em;
-    width: auto;
-}
-
 .Reservation-header-section {
     position: relative;
     background-size: cover; /* Ensures the image covers the entire section */
@@ -257,10 +247,16 @@ footer {
     width: 100%;       /* Ensure the footer spans the full width */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+/* Footer links */
+.footer-link {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Smooth transition */
+}
 
-.logo-text {
-    font-family: 'Poppins', sans-serif; /* Change font to Poppins */
-    font-weight: 700; /* Make it bolder */
-    color: #000000; /* Adjust the color if needed */
+/* Hover effect: blue text and red underline */
+.footer-link:hover {
+    color: #007bff; /* Blue color */
+    text-decoration: underline;
+    text-decoration-color: red; 
 }
