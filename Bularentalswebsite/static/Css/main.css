@@ -256,7 +256,7 @@ footer {
 
 /* Hover effect: blue text and red underline */
 .footer-link:hover {
-    color: #007bff; /* Blue color */
+    color: #ffffff; /* Blue color */
     text-decoration: underline;
     text-decoration-color: red; 
 }
