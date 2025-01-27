@@ -153,9 +153,9 @@ MESSAGE_TAGS = {
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'clintonakpometoba@gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'crmd nnee kega msfa'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'clintonakpometoba@gmail.com'
+DEFAULT_FROM_EMAIL = 'youremail@gmail.com'
 
 django_heroku.settings(locals())
