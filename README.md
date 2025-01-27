@@ -1,1 +1,1 @@
-Visit Our deployment on Heroku: http://bula-rentals-ba36ce12ccc7.herokuapp.com.
+Email Clintonakpometoba@outlook.com for Installation Guide or Questions.
